@@ -1,0 +1,128 @@
+/* styles.css */
+:root {
+    /* Updated Color Palette */
+    --light-bg: #f0f3ff;
+    --dark-bg: #1a1a2e;
+    --mystic-bg: #2d193c;
+    --primary: #ff6b6b;
+    --secondary: #6bffb4;
+    --accent: #ffd96b;
+    --rainbow-gradient: linear-gradient(45deg, 
+        #ff6b6b 0%, 
+        #ffd96b 25%, 
+        #6bffb4 50%, 
+        #6b8cff 75%, 
+        #d96bff 100%);
+}
+
+/* Vibrant Header Styles */
+.magic-text {
+    background: var(--rainbow-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-glow 2s linear infinite;
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+@keyframes rainbow-glow {
+    0% { text-shadow: 0 0 20px rgba(255,107,107,0.5); }
+    25% { text-shadow: 0 0 20px rgba(255,217,107,0.5); }
+    50% { text-shadow: 0 0 20px rgba(107,255,180,0.5); }
+    75% { text-shadow: 0 0 20px rgba(107,140,255,0.5); }
+    100% { text-shadow: 0 0 20px rgba(217,107,255,0.5); }
+}
+
+/* Bigger Writing Area */
+.content-input {
+    height: 300px !important;
+    padding: 20px !important;
+    font-size: 1.2em !important;
+    border: 3px solid var(--primary) !important;
+    background: rgba(255,255,255,0.95) !important;
+}
+
+/* Theme Switcher Fix */
+.theme-switcher {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    font-size: 1.2em;
+    border: 2px solid white !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Colorful Mood Picker */
+.mood-btn {
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.mood-btn[data-mood="😊"] { background: #fff740; }
+.mood-btn[data-mood="😢"] { background: #74d1ff; }
+.mood-btn[data-mood="😠"] { background: #ff7474; }
+.mood-btn[data-mood="🤔"] { background: #b174ff; }
+
+.mood-btn:hover {
+    transform: scale(1.3) rotate(15deg);
+    box-shadow: 0 0 15px currentColor;
+}
+
+/* Catchy Background Pattern */
+body {
+    background-image: 
+        radial-gradient(circle at 10% 10%, 
+            rgba(255,255,255,0.1) 0%, 
+            transparent 50%),
+        radial-gradient(circle at 90% 90%, 
+            rgba(255,255,255,0.1) 0%, 
+            transparent 50%);
+}
+
+/* Updated Theme Colors */
+body[data-theme="light"] {
+    --primary: #ff6b6b;
+    --secondary: #6bffb4;
+    background-color: #f0f3ff;
+}
+
+body[data-theme="dark"] {
+    --primary: #6b8cff;
+    --secondary: #ffd96b;
+    background-color: #1a1a2e;
+}
+
+body[data-theme="mystic"] {
+    --primary: #d96bff;
+    --secondary: #6bffb4;
+    background-color: #2d193c;
+}
+
+/* Floating Emoji Picker */
+.emoji-picker {
+    background: rgba(255,255,255,0.95) !important;
+    border: 2px solid var(--primary) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.emoji-picker span {
+    font-size: 1.5em;
+    transition: all 0.2s ease;
+}
+
+.emoji-picker span:hover {
+    transform: scale(1.5);
+    filter: drop-shadow(0 0 5px var(--primary));
+}

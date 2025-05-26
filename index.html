@@ -1,0 +1,59 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Diary Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body data-theme="light">
+    <div id="particles-js"></div>
+    <div class="container">
+        <header class="header">
+			<div class="theme-switcher">
+    <button class="theme-btn light" data-theme="light">☀️</button>
+    <button class="theme-btn dark" data-theme="dark">🌙</button>
+    <button class="theme-btn mystic" data-theme="mystic">🔮</button>
+</div>
+            <h1 class="magic-text">🔮 Enchanted Diary of Affan ✨</h1>
+            <div class="controls">
+                <!-- Theme and font controls... -->
+                <div class="mood-picker">
+                    <span class="mood-label">Mood:</span>
+                    <div class="mood-options">
+                        <button class="mood-btn" data-mood="😊" title="Happy">😊</button>
+                        <button class="mood-btn" data-mood="😢" title="Sad">😢</button>
+                        <button class="mood-btn" data-mood="😠" title="Angry">😠</button>
+                        <button class="mood-btn" data-mood="🤔" title="Thoughtful">🤔</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="editor">
+            <div class="writing-area">
+                <input type="text" id="noteTitle" class="title-input" placeholder="Entry Title...">
+                <div class="toolbar">
+                    <button onclick="toggleDrawingCanvas()" title="Draw">🎨</button>
+                    <button onclick="formatText('**')" title="Bold">B</button>
+                    <button onclick="formatText('*')" title="Italic">I</button>
+                    <button onclick="insertEmoji('⭐')" title="Star">⭐</button>
+                </div>
+                <textarea id="noteContent" class="content-input" placeholder="Write your heart out... (Markdown supported)"></textarea>
+                <canvas id="drawingCanvas" class="hidden"></canvas>
+                <div id="markdownPreview" class="preview"></div>
+            </div>
+            <button class="save-btn" onclick="saveNote()">💾 Save Entry</button>
+        </main>
+
+        <!-- Saved notes section... -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
